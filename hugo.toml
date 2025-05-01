@@ -1,6 +1,4 @@
 baseURL = "https//barkhan.com.au/"
-relativeURLs = true
-canonifyURLs = true
 languageCode = "en-us"
 title = "Jerome Barkhan"
 theme = "paper"
