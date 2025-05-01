@@ -1,4 +1,4 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://localhost:1313/"
 relativeURLs = true
 canonifyURLs = true
 languageCode = "en-us"
@@ -10,6 +10,7 @@ enableMath = true
 [params]
   color = "light"
   github = "jbarkhan"
+  linkedin = "jeromebarkhan"
   name = "Notes"
   bio = "A personal blog about cybersecurity and sometimes other things."
 
@@ -22,5 +23,7 @@ enableMath = true
     name = "About"
     url = "/about/"
     weight = 1
+
+
 
  

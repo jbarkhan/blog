@@ -1,4 +1,4 @@
-baseURL = "http//barkhan.com.au/"
+baseURL = "https//barkhan.com.au/"
 relativeURLs = true
 canonifyURLs = true
 languageCode = "en-us"
@@ -10,6 +10,7 @@ enableMath = true
 [params]
   color = "light"
   github = "jbarkhan"
+  linkedin = "jeromebarkhan"
   name = "Notes"
   bio = "A personal blog about cybersecurity and sometimes other things."
 
