@@ -1,4 +1,4 @@
-baseURL = "https://barkhan.com.au/"
+baseURL = "https://jbarkhan.github.io/"
 languageCode = "en-us"
 title = "Hello"
 theme = "paper"
@@ -7,8 +7,8 @@ enableMath = true
 
 [params]
   color = "light"
-  github = "yourgithub"
-  name = "Your Name"
+  github = "github.com/jbarkhan"
+  name = "Jerome Barkhan"
 
 [markup]
   [markup.goldmark.renderer]
