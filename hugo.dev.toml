@@ -9,8 +9,9 @@ enableMath = true
 
 [params]
   color = "light"
-  github = "github.com/jbarkhan"
-  name = "Jerome Barkhan"
+  github = "jbarkhan"
+  name = "Notes"
+  bio = "A personal blog about cybersecurity and sometimes other things."
 
 [markup]
   [markup.goldmark.renderer]
