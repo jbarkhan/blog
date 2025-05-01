@@ -1,4 +1,5 @@
 baseURL = "https//barkhan.com.au/"
+canonifyURLs = false
 languageCode = "en-us"
 title = "Jerome Barkhan"
 theme = "paper"
