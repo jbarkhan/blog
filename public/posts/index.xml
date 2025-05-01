@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Hello</title>
-    <link>http://localhost:1313/blog/posts/</link>
-    <description>Recent content in Posts on Hello</description>
+    <title>Posts on Jerome Barkhan</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Jerome Barkhan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 May 2025 18:46:13 +1000</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome</title>
-      <link>http://localhost:1313/blog/posts/welcome/</link>
+      <link>http://localhost:1313/posts/welcome/</link>
       <pubDate>Thu, 01 May 2025 18:46:13 +1000</pubDate>
-      <guid>http://localhost:1313/blog/posts/welcome/</guid>
+      <guid>http://localhost:1313/posts/welcome/</guid>
       <description></description>
     </item>
   </channel>
