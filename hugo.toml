@@ -1,4 +1,6 @@
 baseURL = "https://jbarkhan.github.io/blog"
+relativeURLs = true
+canonifyURLs = true
 languageCode = "en-us"
 title = "Hello"
 theme = "paper"
