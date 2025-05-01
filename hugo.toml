@@ -1,0 +1,23 @@
+baseURL = "https://barkhan.com.au/"
+languageCode = "en-us"
+title = "Hello"
+theme = "paper"
+enableInlineShortcodes = true
+enableMath = true
+
+[params]
+  color = "light"
+  github = "yourgithub"
+  name = "Your Name"
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[menu]
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 1
+
+ 
