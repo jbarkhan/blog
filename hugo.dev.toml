@@ -11,8 +11,8 @@ enableMath = true
   color = "light"
   github = "jbarkhan"
   linkedin = "jeromebarkhan"
-  name = "Notes"
-  bio = "A personal blog about cybersecurity and sometimes other things."
+  name = "notes"
+  bio = "A personal blog about cyber security and maybe other things. I am new to the field and lack both the experience and knowledge to contribute as an expert. Rather, I plan to use this space for now to think my thoughts through writing and hope that you can take something beneficial from that."
 
 [markup]
   [markup.goldmark.renderer]
@@ -20,9 +20,13 @@ enableMath = true
 
 [menu]
   [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 1
+    name = 'home'
+    pageRef = '/'
+    weight = 10
+  [[menu.main]]
+    name = "whoami"
+    url = "/whoami/"
+    weight = 20
 
 
 
