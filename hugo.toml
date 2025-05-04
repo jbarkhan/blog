@@ -1,7 +1,7 @@
-baseURL = "https//barkhan.com.au/"
+baseURL = "https//nullthought.dev/"
 canonifyURLs = false
 languageCode = "en-us"
-title = "Jerome Barkhan"
+title = "null thought"
 theme = "paper"
 enableInlineShortcodes = true
 enableMath = true

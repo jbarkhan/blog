@@ -19,13 +19,13 @@ jobs:
           hugo-version: 'latest'
           extended: true
       - name: Build
-        run: hugo --minify --baseURL "https://barkhan.com.au/"
+        run: hugo --minify --baseURL "https://nullthought.dev/"
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
-          cname: barkhan.com.au
+          cname: nullthought.dev
           user_name: jbarkhan
           user_email: jbarkhan@users.noreply.github.com
