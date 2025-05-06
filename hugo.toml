@@ -7,11 +7,13 @@ enableInlineShortcodes = true
 enableMath = true
 
 [params]
-  color = "light"
+  color = "linen"
   github = "jbarkhan"
   linkedin = "jeromebarkhan"
   name = "notes"
   bio = "A personal blog about cyber security and maybe other things. I am new to the field and lack both the experience and knowledge to contribute as an expert. Rather, I plan to use this space for now to think my thoughts through writing and hope that you can take something beneficial from that."
+  monoDarkIcon = true
+  math = true
 
 [markup]
   [markup.goldmark.renderer]
