@@ -1,6 +1,7 @@
-baseURL = "https//nullthought.dev/"
-canonifyURLs = false
-languageCode = "en-gb"
+baseURL = "http://localhost:1313/"
+relativeURLs = true
+canonifyURLs = true
+languageCode = "en-us"
 title = "null thought"
 theme = "paper"
 enableInlineShortcodes = true
@@ -29,4 +30,7 @@ enableMath = true
     name = "whoami"
     url = "/whoami/"
     weight = 20
+
+
+
  
