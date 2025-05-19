@@ -2,6 +2,7 @@
 date = '2025-05-18'
 draft = false
 title = 'detection engineering: what matters and can you measure success?'
+description = 'Ramble 1/? about detection engineering.'
 +++
 
 
@@ -17,7 +18,7 @@ For context, when I talk about detection engineering, I am referring to the appa
 
 Despite the limited amount of information, some of the concepts I have come across in my research might be constituent parts of good answers and are helpful in their current form. I aim to explore some of those in this post and future posts.
 
-There are several reasons I have been thinking about detection engineering. Firstly, I work in detection and response and it constitute a large part of what I do day-to-day. Secondly, and more importantly, I have come to appreciate the significant way in which it underpins and enables defensive operational awareness and the role it plays in causing the adversary a great deal of pain.
+There are several reasons I have been thinking about detection engineering. Firstly, I work in detection and response and it constitutes a large part of what I do day-to-day. Secondly, and more importantly, I have come to appreciate the significant way in which it underpins and enables defensive operational awareness and the role it plays in causing the adversary a great deal of pain.
 
 My plan is to start with discussing these questions at a high level and work my way down to the details. But I make no promises to adhere to that plan. To that end, I have one outcome I am ultimately trying to achieve on this journey:
 > Fix a bit of the murky thought cloud in my head by distilling it into writing that makes a little bit of sense.
@@ -81,7 +82,7 @@ Since your rules are dependent on data from your environment, coverage also enta
 It is also important to acknowledge the fact that the adversary is not stationary. They adapt. The threat landscape is constantly evolving. Your rule set should be equally adaptable. If your rule set lags behind changes to your threat profile then you end up with a coverage gap. Continual assessment of coverage is necessary.
 
 ## 2. Quality
-Quality reflects mainly how well your rule is documented, promotes triage efficiency through context, and it's performance. However, I think quality is a complex variable with more contributing factors. To expand on just the three highlighted:
+Quality reflects mainly how well your rule is documented, promotes triage efficiency through context, and its performance. However, I think quality is a complex variable with more contributing factors. To expand on just the three highlighted:
 1. **Documentation**: we want the rule to be accompanied by documentation that at least facilitates easily understanding:
     * The intention, goal, or objective of the rule - what signal is it trying to surface?
     * Why the signal matters - is this worth the time that your incident response team will spend investigating?
@@ -120,7 +121,7 @@ Many parts of theory, science, and professions are concerned with measuring thin
 
 There are good reasons to measure the success of a detection engineering program. But what does success even mean in this context? I think this is actually quite a hard question to answer. If we base success on the established purpose, then success implies at least identifying the presence of all adversaries before they can achieve their objectives.
 
-The problem is that you don't know the ground truth. You can't know a priori if an adversary is present or not and you can't easily prove their absence. If your detection rules don't surface adversary behaviour it doesn't necessarily mean one isn't there. Absence of evidence is not necessarily evidence of absence. You could just have bad detection rules. And that's fine, because think of all the room for improvement.
+The problem is that you don't know the ground truth. You can't know a priori if an adversary is present or not and you can't easily prove their absence. If your detection rules don't surface adversary behaviour it doesn't necessarily mean one isn't there. Absence of evidence is not necessarily evidence of absence. You could just have bad detection rules or have missing data. And that's fine, because think of all the room for improvement.
 
 On the other hand, it can be very easy to tell if you have failed (assuming sufficiently competent incident response):
 - If your data ends up for sale on the dark web, you have probably failed.
@@ -161,7 +162,7 @@ These are statistics you can calculate, sometimes easily, but that are not direc
 - Mean time to triage.
 - Alert fatigue indicator.
 
-None of these are going to be particularly informative and they are almost always confounded by factors that you might not be aware of or that are outside your remit. Be careful when calculating and interpreting these statistics.
+None of these are going to be particularly informative alone and they are almost always confounded by factors that you might not be aware of or that are outside your remit. Be careful when calculating and interpreting these statistics.
 
 # to summarise
 I think there are three variables that matter:
