@@ -45,7 +45,7 @@ To expand on the first reason briefly:
 - Disrupting the adversary before they can achieve malicious goals is the ideal scenario for incident response. If you detect the adversary after they have achieved their goals, your detection has failed and your organisation and responders are probably not having a good time.
 
 On the second reason, a detection rule is nothing more than a type of *binary classifier*. For simplicity, and without much loss of generality, if we restrict our definition of detection rule to those that are search based, a detection rule $r$ can be viewed conceptually as a composition of two functions:
-- A signal extraction function $s$ that maps data $x\in X$ to signals.
+- A signal extraction function $s$ that maps data from your search space $x\in X$ to signals.
 - A decision function $d$ that maps those signals to a binary threat classification.
 
 That is to say, the rule $r$ computes a threat label $y\in (\text{threat}, \text{no threat})$ as:
@@ -53,7 +53,7 @@ $$
 y = r(x) = d(s(x))
 $$
 
-This abstraction is helpful for highlighting how separate features of a rule can be evaluated and optimised independently. We can improve fidelity through $s$ and tune the decision boundary through $d$. For example, $s$ may catch encoded PowerShell commands and $d$ includes logic to determine which are malicious.
+This abstraction is helpful for highlighting how separate features of a rule can be evaluated and optimised independently. We can improve fidelity through $s$ and tune the decision boundary through $d$. For example, $s$ may catch encoded PowerShell commands and $d$ consists of a model or logic to determine which are malicious.
 
 There are existing tools and methods that we can borrow from signal detection theory for measuring the performance of binary classifiers, understanding the nature of tuning them, and recognising their limitations. Taking advantage of these tools and methods can also provide insights that will allow us to avoid mistakes that lead to common issues in the detection and response space. For brevity, I will refrain from listing them. If you have spent time triaging alerts then you know.
 
