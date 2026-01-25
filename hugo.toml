@@ -1,4 +1,4 @@
-baseURL = "https//nullthought.dev/"
+baseURL = "https://nullthought.dev/"
 canonifyURLs = false
 languageCode = "en-gb"
 title = "null thought"
