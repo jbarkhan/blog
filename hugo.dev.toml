@@ -13,6 +13,7 @@ enableMath = true
   linkedin = "jeromebarkhan"
   name = "notes"
   bio = "A personal blog about cyber security and maybe some other things. I am using this space to think my thoughts through writing and I hope that you can find something useful in the process."
+  monoDarkIcon = true  
   math = true
   ShowReadingTime = true
 

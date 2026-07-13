@@ -47,7 +47,7 @@ As a first attempt, let's say $C$ is the product of the number of triage analyst
 $$
 C = c\mu
 $$
-As an example, if there are $c=5$ triage analysts and they can each close $\mu=2$ alerts per hour on average, then $C=10$ alerts per hour. If the arrival rate of alerts, $\lambda$, exceeds 10, then your queue is unstable. Utilisation reaches 100% and the number of alerts in the queue grows indefinitely. In fact, as $\lambda$ approaches 10, triage analysts lose time for non-triage work. They can't attend meetings, do admin, or uplift through continuous improvement. The stability of the system depends on the condition
+As an example, if there are $c=5$ triage analysts and they can each close $\mu=2$ alerts per hour on average, then $C=10$ alerts per hour. If the arrival rate of alerts, $\lambda$, exceeds 10, then your queue is unstable. Utilisation exceeds 100% and the number of alerts in the queue grows indefinitely. In fact, as $\lambda$ approaches 10, triage analysts lose time for non-triage work. They can't attend meetings, do admin, or uplift through continuous improvement. The stability of the system depends on the condition
 $$\rho = \frac{\lambda}{c\mu} < 1$$
 This model is simple and it can answer our question. It can also answer other questions we raised. From the resourcing perspective, given $\mu$ and $\lambda$, we can work out the minimum number of analysts we need for stability, $c$. Additionally, $\rho$ also tells us the average utilisation of our triage analysts. An important consideration for ensuring sufficient time can be allocated to non-triage work. Things start to get a bit tricky though if we change our definition of *handle*.
 
@@ -62,13 +62,13 @@ Enter queueing theory. Let's suppose that:
 1. A Poisson process describes the arrival of alerts, so the time between alerts is exponentially distributed with arrival rate $\lambda$.
 2. Triage times are exponentially distributed, with rate $\mu$.
 
-These conditions define the $M/M/c$ queue, a multi-server queueing model. The first and second $M$ signify that the time between arrivals and service times are Markovian. This is equivalent to what we stated in suppositions 1 and 2. The $c$ means $c$ servers. Surprisingly, the same stability condition applies to this model
+These conditions define the $M/M/c$ queue, a multi-server queueing model. The first and second $M$ signify that the time between arrivals and service times are Markovian. This is equivalent to what we stated in suppositions 1 and 2. The $c$ means $c$ servers. The same stability condition applies to this model
 $$\rho = \frac{\lambda}{c\mu} < 1$$
 $\rho$ also tells us the average utilisation of our triage analysts. If this condition holds, we can derive many interesting properties of the queue. I will skip overly lengthy derivations here. But you can find them in standard textbooks. As an example, the probability that an alert will need to wait in the queue is given by
 $$
 \text{P}(T_w > 0) = \frac{1}{1+(1-\rho)\left(\frac{c!}{(c\rho)^c}\right)\sum_{k=0}^{c-1} \frac{(c\rho)^k}{k!}}
 $$
-This is known as Erlang's C formula. To investigate a time-based acknowledgement goal, we want to know the probability that an alert waits less than a threshold $t \geq 0$
+This is known as Erlang's C formula. To investigate a time-based acknowledgement goal, we want to know the probability that an alert waits less than a threshold $t > 0$
 $$\text{P}(T_w < t)$$
 This can happen in two ways, either the alert does or doesn't wait
 $$
@@ -79,7 +79,7 @@ Working through this expression to known quantities:
 2. Conditioning on $T_w = 0$, the probability an alert waits less than $t$ is clearly 1, so $\text{P}(T_w < t \mid T_w = 0) = 1$.
 3. If an alert has to wait, then the waiting time distribution is exponential with rate $c\mu - \lambda$. So the conditional cumulative distribution function is given by
 $$
-\text{P}(T_w < t \mid T_w > 0) = 1 - e^{-(c\mu−\lambda)t}
+\text{P}(T_w < t \mid T_w > 0) = 1 - e^{-(c\mu-\lambda)t}
 $$
 
 The simplified expression for looking at acknowledgement is then
@@ -140,4 +140,4 @@ Now that we have a model that can help us answer important and interesting quest
 - **Alerts arrive independently** Events that generate alerts are often not entirely independent. Threat actor campaigns can be coordinated and concentrated in time and multiple alerts can arise from the same underlying activity.
 - **The arrival rate of alerts is stationary** The arrival rate depends on many factors that change in time. Examples include employee activity, attack and detection surfaces, and the threat actor ecosystem. Some of these things are not easily predictable and can be difficult to account for.
 
-I think that in most situations, deviations from assumptions will result in immaterial prediction errors or we can account for them easily. If not, more sophisticated models exist. Examples include $M/G/k$ (where triage time is a general distribution) or $M/M/c$ with priority classes. Alternatively, we can run discrete event simulations to derive empirical probabilities.
+I think that in most situations, deviations from assumptions will result in immaterial prediction errors or we can account for them easily. If not, more sophisticated models exist. Examples include $M/G/k$ (where triage time is a general distribution) or $M/M/c$ with priority classes. Alternatively, we can run discrete event simulations to estimate empirical probabilities.
