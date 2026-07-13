@@ -1,0 +1,16 @@
+/* Site-level overrides for the paper theme. Takes precedence over
+   themes/paper/assets/custom.css via Hugo's asset mount order. */
+
+html {
+  scrollbar-gutter: stable;
+}
+
+article {
+  font-size: 1rem; /* theme default is 1.125rem (text-lg) */
+  line-height: 1.6; /* theme default is 1.8, scaled down with the font size */
+
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

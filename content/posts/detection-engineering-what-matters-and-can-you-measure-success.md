@@ -2,11 +2,12 @@
 date = '2025-05-18'
 draft = false
 title = 'detection engineering: what matters and can you measure success?'
-description = 'Ramble 1/? about detection engineering.'
+description = 'Thinking through what actually matters in a detection engineering program: coverage, quality, and capacity. Is success measurable?'
+tags = ['detection-engineering', 'capacity-planning', 'metrics']
 +++
 
 
-# a beginning
+## a beginning
 I have been thinking lately about detection engineering. Specifically, I have been thinking about these two questions as they relate to a detection engineering program:
 
 1. What matters?
@@ -27,7 +28,7 @@ If a by-product of this is developing guidance that is simple, non-prescriptive,
 
 As I progress, it is likely that I will discover new information and change how I see things. I will revisit and update or make new posts when that happens. I will also probably be making a lot of implicit assumptions about what you know, this is selfishly written for me.
 
-# what matters?
+## what matters?
 I first want to start with purpose. Without purpose, it is difficult to be coherent and make sense of why and how we do things. Ignoring the potential philosophical implications of that statement, I take the liberty of assuming it is true. Moving forward, I will use the following definition of purpose for detection engineering.
 
 Purpose
@@ -70,7 +71,7 @@ $$
 
 ![Strategy](/images/strategy.svg)
 
-## 1. Coverage
+### 1. Coverage
 Coverage refers to the extent to which your detection rules collectively target surfacing the range of signals that are known to be created by threat actors. A *coverage gap* presents the adversary with an opportunity to achieve their goals without detection. There are many ways to think about what this means. The contemporary example is facilitated by MITRE ATT&CK through tactics and techniques. You can build a map between your rules that surface tactics and techniques and the ATT&CK library to visualise or measure your coverage.
 
 Given limited resources, you can constrain the library by prioritising tactics and techniques based on your threat profile. [This post](https://detect.fyi/detection-engineering-lifecycle-an-integrated-approach-to-threat-detection-and-response-54de5bf17dba) outlines a prioritisation method along these lines. Of course, tactics and techniques are not the only signal we aim to surface, but they do sit at the top of the [Pyramid of Pain](https://www.attackiq.com/glossary/pyramid-of-pain/). 
@@ -81,7 +82,7 @@ Since your rules are dependent on data from your environment, coverage also enta
 
 It is also important to acknowledge the fact that the adversary is not stationary. They adapt. The threat landscape is constantly evolving. Your rule set should be equally adaptable. If your rule set lags behind changes to your threat profile then you end up with a coverage gap. Continual assessment of coverage is necessary.
 
-## 2. Quality
+### 2. Quality
 Quality reflects mainly how well your rule is documented, promotes triage efficiency through context, and its performance. However, I think quality is a complex variable with more contributing factors. To expand on just the three highlighted:
 1. **Documentation**: we want the rule to be accompanied by documentation that at least facilitates easily understanding:
     * The intention, goal, or objective of the rule - what signal is it trying to surface?
@@ -96,7 +97,7 @@ Quality reflects mainly how well your rule is documented, promotes triage effici
     * Automating the required response where possible.
 3. **Performance**: we want the rule to surface signals that constitute real threats and not noise. There are several performance metrics associated with binary classifiers we can lean on here. I have to stress that not all metrics are equal and it is crucial to understand their strengths and weaknesses. This is especially true when signals are rare and the base rate fallacy is at play. The most accurate rule can have low precision and a high false positive rate.
 
-## 3. Capacity
+### 3. Capacity
 At the end of the day, your triage team can only do so much. All else being equal, there will be a certain alert rate that your team is capable of handling before they start to experience burnout or make investigative compromises and mistakes. This rate is what I call *capacity*. The alert rate must be carefully matched to capacity.
 
 Jai Minton has a [blog post](https://www.jaiminton.com/internal-blog/high-impact-security-analysis#) that, among other things, walks through the triage process and explains in detail the analyst mindset. In particular, he relates the concept of the iron triangle to alert triage. He says that security analysis can be good, fast, or cheap, but you can only ever pick at most 2 in any given instance. Given the sobering reality of a budget and applying this concept to a triage team collectively, I suggest further that there is actually an upper bound on speed and it can easily be overwhelmed by:
@@ -116,7 +117,7 @@ Like quality, capacity is somewhat complex and there are many contributing facto
 
 How many of these factors the detection engineering program shares responsibility for will depend on the broader cyber security operating model. But it should be acutely aware of all of them.
 
-# can you measure success?
+## can you measure success?
 Many parts of theory, science, and professions are concerned with measuring things. There are good reasons for this. Measurement allows us to test assumptions, understand the effects of change, make informed decisions, and build bridges that don't collapse. If you can measure something, it is easier to manage and optimise. It is also often hard to do, especially when uncertainty plays a large role. Risk, for example, is defined by uncertainty, and entire professions are dedicated to understanding and quantifying it.
 
 There are good reasons to measure the success of a detection engineering program. But what does success even mean in this context? I think this is actually quite a hard question to answer. If we base success on the established purpose, then success implies at least identifying the presence of all adversaries before they can achieve their objectives.
@@ -134,7 +135,7 @@ What these examples serve to highlight is an asymmetry. While failure tends to b
 2. Continuous testing.
 3. Proxy metrics.
 
-## 1. Experience Based Heuristics
+### 1. Experience Based Heuristics
 Under this category I place all of the maturity models and adjacent frameworks. These seem to be largely constructed from aggregated experience. They cannot tell you directly if you are succeeding. But they can provide guidance that allows you to situate and orient your program so that it is moving in the right direction (at least according to the collective experience of seasoned practitioners or experts).
 
 Some notable references in this space include:
@@ -142,20 +143,20 @@ Some notable references in this space include:
 - Ryan Stillion's [Detection Maturity Level model](https://ryanstillions.blogspot.com/2014/04/the-dml-model_21.html). A great read that pre-dates the release of ATT&CK for Enterprise and covers a lot of ground on, and adjacent to, tactics and techniques.
 - Kyle Bailey's [Detection Engineering Maturity Matrix](https://detectionengineering.io/). It is comprehensive at a high level but concise enough to fit on a single page.
 
-## 2. Continuous Testing
+### 2. Continuous Testing
 To know if something is working you should test it. If something changes, you should test it again. If some time has passed since you last tested it, you should also test it again. In this case there are two primary methods that I think apply:
 1. Unit testing.
 2. Adversary emulation.
 
-### Unit Testing
+#### Unit Testing
 For each rule in your rule set you should know how to generate signals that the rule will surface. You should create these signals on a regular basis in a clean way in your environment to trigger the rule and confirm that the alert triggered correctly. Ideally this process is automated and bypasses triage.
 
-### Adversary Emulation
+#### Adversary Emulation
 One team, two team, red team, blue team, or purple team. Whatever you want to call it, pretend to be the adversary and do the thing. The more the better. If you can't do it, get someone else to do it. Did you detect all the things? Great! Otherwise, you have work to do.
 
 There is a recent trend among ransomware groups where they will provide their victims with a detailed report outlining how they gained access after payment. This sounds cool, almost like a legitimate business service. But you can get the same outcome with more certainty, less pain, and for fewer gold coins from people who are not financially motivated criminals. Plus, there are all the other kinds of adversaries that have no incentive to tell you how they did the thing.
 
-## 3. Proxy Metrics
+### 3. Proxy Metrics
 These are statistics you can calculate, sometimes easily, but that are not directly measuring detection engineering success. Rather, you might be able to infer something about success from them. Examples include:
 - Rule set coverage indicator.
 - Mean time to detect.
@@ -164,7 +165,7 @@ These are statistics you can calculate, sometimes easily, but that are not direc
 
 None of these are going to be particularly informative alone and they are almost always confounded by factors that you might not be aware of or that are outside your remit. Be careful when calculating and interpreting these statistics.
 
-# to summarise
+## to summarise
 I think there are three variables that matter:
 - Coverage
 - Quality

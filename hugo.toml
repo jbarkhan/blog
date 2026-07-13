@@ -5,16 +5,18 @@ title = "null thought"
 theme = "paper"
 enableInlineShortcodes = true
 enableMath = true
+enableRobotsTXT = true
 
 [params]
   color = "linen"
   github = "jbarkhan"
   linkedin = "jeromebarkhan"
   name = "notes"
-  bio = "A personal blog about cyber security and maybe some other things. I am using this space to think my thoughts through writing and I hope that you can find something useful in the process. Some of my thoughts may even be good ones, but I encourage you to apply your own judgement."
+  bio = "A personal blog about cyber security and maybe some other things. I am using this space to think my thoughts through writing and I hope that you can find something useful in the process. Some of my thoughts may even be helpful, but I encourage you to apply your own judgement."
   monoDarkIcon = true
   math = true
   ShowReadingTime = true
+  images = ["/images/og-image.png"]
 
 [markup]
   [markup.goldmark.renderer]

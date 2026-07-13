@@ -29,3 +29,15 @@ jobs:
           cname: nullthought.dev
           user_name: jbarkhan
           user_email: jbarkhan@users.noreply.github.com
+      - name: Notify IndexNow
+        run: |
+          KEY="3c17b266e9417b30bde8ea9b30f7ce70"
+          URL_LIST=$(grep -oP '(?<=<loc>)[^<]+' public/sitemap.xml | jq -R . | jq -s .)
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$(jq -n \
+                --arg host "nullthought.dev" \
+                --arg key "$KEY" \
+                --arg keyLocation "https://nullthought.dev/$KEY.txt" \
+                --argjson urlList "$URL_LIST" \
+                '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}')"
