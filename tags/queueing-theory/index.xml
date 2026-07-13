@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Queueing-Theory on null thought</title><link>https://nullthought.dev/tags/queueing-theory/</link><description>Recent content in Queueing-Theory on null thought</description><generator>Hugo</generator><language>en-gb</language><lastBuildDate>Mon, 13 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://nullthought.dev/tags/queueing-theory/index.xml" rel="self" type="application/rss+xml"/><item><title>detection engineering: understanding alert capacity</title><link>https://nullthought.dev/posts/detection-engineering-understanding-alert-capacity/</link><pubDate>Mon, 13 Jul 2026 00:00:00 +0000</pubDate><guid>https://nullthought.dev/posts/detection-engineering-understanding-alert-capacity/</guid><description>&lt;h2 id="why">why&lt;/h2>
+&lt;p>&lt;a href="https://nullthought.dev/posts/detection-engineering-what-matters-and-can-you-measure-success/">My last post&lt;/a> claimed that 3 things matter in a detection engineering program: coverage, quality, and capacity. In this post I want to spend some time exploring the last in more detail. Specifically, I want to introduce a method that can help us answer common questions that come up in this space. Some examples include:&lt;/p>
+&lt;ul>
+&lt;li>What total alert rate can the triage team handle?&lt;/li>
+&lt;li>What expected alert rate is reasonable for deploying a new rule?&lt;/li>
+&lt;li>What alert rate for an existing rule should trigger a review?&lt;/li>
+&lt;li>How many triage analysts do we need?&lt;/li>
+&lt;li>What is the payoff for automation?&lt;/li>
+&lt;/ul>
+&lt;p>Having answers to these questions is important. A given capacity imposes an alert budget and there are material consequences to exceeding it. Examples include operational burnout, reduced efficacy and efficiency, and even complete functional collapse. While it is easy to handwave answers, we can do a lot better with a little effort.&lt;/p></description></item></channel></rss>
