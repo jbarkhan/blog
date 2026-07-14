@@ -2,7 +2,7 @@ baseURL = "http://localhost:1313/"
 relativeURLs = true
 canonifyURLs = true
 languageCode = "en-gb"
-title = "null thought"
+title = "null thøught"
 theme = "paper"
 enableInlineShortcodes = true
 enableMath = true
@@ -29,7 +29,3 @@ enableMath = true
     name = "whoami"
     url = "/whoami/"
     weight = 20
-
-
-
- 

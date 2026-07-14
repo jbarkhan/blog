@@ -1,7 +1,7 @@
 baseURL = "https://nullthought.dev/"
 canonifyURLs = false
 languageCode = "en-gb"
-title = "null thought"
+title = "null thøught"
 theme = "paper"
 enableInlineShortcodes = true
 enableMath = true
