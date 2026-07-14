@@ -4,6 +4,7 @@ draft = false
 title = 'detection engineering: what matters and can you measure success?'
 description = 'Thinking through what actually matters in a detection engineering program: coverage, quality, and capacity. Is success measurable?'
 tags = ['detection-engineering', 'capacity-planning', 'metrics']
+math = true
 +++
 
 

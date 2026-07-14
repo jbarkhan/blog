@@ -4,6 +4,7 @@ draft = false
 title = 'detection engineering: understanding alert capacity'
 description = "A queueing theory model for detection engineering capacity - working out how many alerts a triage team can actually handle, and what breaks when they can't."
 tags = ['detection-engineering', 'capacity-planning', 'queueing-theory']
+math = true
 +++
 
 ## why
