@@ -40,7 +40,8 @@ In practice, we can approach this in many ways. The approach I want to illustrat
 
 ## model one
 Let's start simple by trying to answer the following question:
-> What maximum alert rate $C$ can the triage team handle?
+
+**What maximum alert rate $C$ can the triage team handle?**
 
 Before we go further, we have to define what we mean by *handle*. For now, let's say that it means the queue (backlog of alerts) doesn't continue to grow forever.
 

@@ -14,3 +14,16 @@ article {
     margin-right: auto;
   }
 }
+
+/* Tailwind Typography puts the closing quote on blockquote p:last-of-type.
+   When a blockquote ends in a list (e.g. a quoted intro sentence + list),
+   there's no trailing <p> to carry it, so quoted lists render unclosed (or,
+   when the intro is the blockquote's only <p>, both marks land on that one
+   paragraph and the list is left outside the quotes entirely). Move the
+   closing quote to the last list item when the blockquote ends in a list. */
+article blockquote:has(> ul:last-child) p:last-of-type::after {
+  content: none;
+}
+article blockquote:has(> ul:last-child) > ul:last-child li:last-child::after {
+  content: close-quote;
+}
