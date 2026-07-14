@@ -1488,4 +1488,4 @@
 }@property --tw-ring-offset-shadow{syntax: "*";
   inherits: false;
   initial-value: 0 0 #0000;
-}@keyframes spin{to{transform:rotate(360deg)}}html{scrollbar-gutter:stable}article{font-size:1rem;line-height:1.6;img { margin-left: auto; margin-right: auto; }}
+}@keyframes spin{to{transform:rotate(360deg)}}html{scrollbar-gutter:stable}article{font-size:1rem;line-height:1.6;img { margin-left: auto; margin-right: auto; }}article blockquote:has(>ul:last-child) p:last-of-type::after{content:none}article blockquote:has(>ul:last-child)>ul:last-child li:last-child::after{content:close-quote}
